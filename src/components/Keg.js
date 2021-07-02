@@ -20,5 +20,5 @@ Keg.PropTypes = {
     location: PropTypes.string.isRequired,
     abv: PropTypes.string.isRequired,
     price: PropTypes.string.isRequired,
-    pints: PropTypes.number.isRequired
+    volume: PropTypes.number.isRequired
 }
