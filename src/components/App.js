@@ -1,13 +1,13 @@
 import React from 'react';
 import Header from './Header.js';
-import Control from '.Control';
+import KegControl from './KegControl.js';
 import './App.css';
 
 function App() {
     return (
         <React.Fragment>
             <Header/>
-            <Control/>
+            <KegControl/>
         </React.Fragment>
     );
 }

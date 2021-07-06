@@ -6,36 +6,36 @@ function GenericForm(props) {
         <React.Fragment>
             <form onSubmit={props.formSubmissionHandler}>
 
-                <label for="brewery">Brewery:</label>
+                <label htmlFor="brewery">Brewery:</label>
                 <input
                     type="text"
                     name="brewery"/>
 
-                <label for="name">Name:</label>
+                <label htmlFor="name">Name:</label>
                 <input
                     type="text"
                     name="name"/>
 
-                <label for="location">Location:</label>
+                <label htmlFor="location">Location:</label>
                 <input
                     type="text"
                     name="location"/>
 
-                <label for="abv">Percent ABV:</label>
+                <label htmlFor="abv">Percent ABV:</label>
                 <input
                     type="text"
                     name="abv"/>
 
-                <label for="price">Price:</label>
+                <label htmlFor="price">Price:</label>
                 <input
                     type="text"
                     name="price"/>
 
-                <label for="description">Summary:</label>
+                <label htmlFor="description">Summary:</label>
                 <textarea
                     name="description"/>
 
-                <label for="volume">Update Volume:</label>
+                <label htmlFor="volume">Update Volume:</label>
                 <input
                     type="text"
                     name="volume"/>
