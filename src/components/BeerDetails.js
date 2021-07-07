@@ -20,7 +20,8 @@ function BeerDetails(props) {
 BeerDetails.propTypes = {
     keg: PropTypes.object,
     onClickingDelete: PropTypes.func,
-    onClickingEdit: PropTypes.func
+    onClickingEdit: PropTypes.func,
+    onClickingSell: PropTypes.func
 };
 
 export default BeerDetails;

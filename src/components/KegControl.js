@@ -30,6 +30,18 @@ class KegControl extends React.Component {
         }
     }
 
+    handleSellingPint = (id) => {
+        const selectedKeg = this.state.kegArray.filter(keg => keg.id === id)[0];
+        if(selectedKeg.volume >= .125) {
+            const newVolume = selectedKeg.volume - .125;
+            const tempKeg = Object.assign({}, selectedKeg, {volume: newVolume});
+            const tempKegArray = this.state.kegArray.filter(keg => keg.id !== selectedKeg.id).concat(tempKeg);
+            this.setState({
+                kegArray: tempKegArray,
+            });
+        }
+    }
+
     handleSelectingKeg = (id) => {
         const selectedKeg = this.state.kegArray.filter(keg => keg.id === id)[0];
         this.setState({selectedKeg: selectedKeg});
@@ -67,20 +79,22 @@ class KegControl extends React.Component {
     render() {
         let currentlyVisibleState = null;
         let buttonText = null;
-
         if (this.state.editing) {
-            currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditingKeg = {this.handleEditingKeg}/>
+            currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} 
+            onEditingKeg = {this.handleEditingKeg}/>
             buttonText = "Return to List";
         } else if (this.state.selectedKeg != null) {
             currentlyVisibleState = <BeerDetails keg = {this.state.selectedKeg} 
-                onClickingDelete = {this.handleDeletingKeg}
-                onClickingEdit = {this.handleClickEdit}/>
+            onClickingDelete = {this.handleDeletingKeg}
+            onClickingEdit = {this.handleClickEdit}/>
             buttonText = "Back To List";
         } else if (this.state.formVisibleOnPage) {
             currentlyVisibleState = <NewKegForm onAddingNewKeg = {this.handleAddingKegToList}/>;
             buttonText = "Back To List";
         } else {
-            currentlyVisibleState = <KegList kegList = {this.state.kegArray} onSelectingKeg = {this.handleSelectingKeg}/>
+            currentlyVisibleState = <KegList kegList = {this.state.kegArray} 
+            onSelectingKeg = {this.handleSelectingKeg}
+            onClickingSell = {this.handleSellingPint}/>
             buttonText = "Add New Keg";
         }
         return (

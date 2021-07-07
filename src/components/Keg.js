@@ -1,38 +1,36 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./KegList.css";
+import "./KegControl.js";
 
 function Keg(props) {
     return(
         <React.Fragment>
 
-        <div className="wrapper">
-            <div onClick = {() => props.whenKegClicked(props.id)}>
-                <div className="one">DIV 1
-                    <h2>{props.brewery} {props.name}</h2>
-                    END DIV1
+            <div className="wrapper">
+                <div onClick = {() => props.whenKegClicked(props.id)}>
+                    <div className="one">
+                        <h2>{props.brewery} {props.name}</h2>
+                        <h3>{props.location}</h3>
+                    </div>
                 </div>
-            </div>
+
                 <div className="two">
-                    DIV 2
-                {props.location}
-                END DIV 2
+                    <h1>{props.abv}</h1>
                 </div>
+
                 <div className="three">
-                    D3
-                {props.abv}
-                D3
+                    <h1>{props.price}</h1>
                 </div>
+
                 <div className="four">
-                    D4
-                <h3>{props.price}</h3>
-                D4
+                    <h1>{props.volume*8} Pints Left</h1>
                 </div>
+
                 <div className="five">
-                    D5
-                <h2>{props.volume*8}</h2>
-                D5
+                    <button onClick = {() => props.whenSellClicked(props.id)}>Sell Pint</button>
                 </div>
+
             </div>
             
         </React.Fragment>
@@ -47,7 +45,8 @@ Keg.propTypes = {
     abv: PropTypes.string,
     price: PropTypes.string,
     volume: PropTypes.number,
-    whenKegClicked: PropTypes.func
+    whenKegClicked: PropTypes.func,
+    whenSellClicked: PropTypes.func
 }
 
 export default Keg;

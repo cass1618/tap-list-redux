@@ -1,22 +1,50 @@
 .wrapper {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
   }
+
 .one {
-    flex: 1;
+  flex: auto;
     background-color: aqua;
+    width: 50vw;
+    height: 10vh;
+    margin: auto;
   }
+
   .two {
-    flex: 2;
-    background-color:blue;
+    flex: auto;
+    background-color: blue;
+    width: 10vw;
+    height: 10vh;
+    margin: auto;
   }
-  .three {
-    flex: 3;
-    background-color:coral;
-  }
-  .four {
-    flex: 4;
-  }
-  .five {
-    flex: 5;
-  }
+
+.three {
+  flex: auto;
+  background-color: blueviolet;
+  width: 10vw;
+  height: 10vh;
+  margin: auto;
+}
+
+.four {
+  background-color: chartreuse;
+  width: 20vw;
+  height: 10vh;
+  margin: auto;
+}
+
+.five {
+  flex: auto;
+  background-color: crimson;
+  width: 10vw;
+  height: 10vh;
+  margin: auto;
+}
+
+.five button {
+  height: 8vh;
+  width: 8vw;
+  margin: auto
+}
