@@ -6,7 +6,6 @@
 
 .one {
   flex: auto;
-    background-color: aqua;
     width: 50vw;
     height: 10vh;
     margin: auto;
@@ -14,7 +13,6 @@
 
   .two {
     flex: auto;
-    background-color: blue;
     width: 10vw;
     height: 10vh;
     margin: auto;
@@ -22,14 +20,12 @@
 
 .three {
   flex: auto;
-  background-color: blueviolet;
   width: 10vw;
   height: 10vh;
   margin: auto;
 }
 
 .four {
-  background-color: chartreuse;
   width: 20vw;
   height: 10vh;
   margin: auto;
@@ -37,7 +33,6 @@
 
 .five {
   flex: auto;
-  background-color: crimson;
   width: 10vw;
   height: 10vh;
   margin: auto;
