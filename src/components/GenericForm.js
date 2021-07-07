@@ -44,12 +44,12 @@ function GenericForm(props) {
                 <hr/>
             </form>
         </React.Fragment>
-    );
-};
+    )
+}
 
 GenericForm.propTypes = {
     formSubmissionHandler: PropTypes.func,
     buttonText: PropTypes.string
-};
+}
 
 export default GenericForm;

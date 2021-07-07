@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+.one {
+    flex: 1;
+    background-color: aqua;
+  }
+  .two {
+    flex: 2;
+    background-color:blue;
+  }
+  .three {
+    flex: 3;
+    background-color:coral;
+  }
+  .four {
+    flex: 4;
+  }
+  .five {
+    flex: 5;
+  }
