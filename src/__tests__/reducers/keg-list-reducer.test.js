@@ -1,8 +1,10 @@
 import kegListReducer from "../../reducers/keg-list-reducer";
+import * as c from "./../../actions/ActionTypes.js";
 
 describe("KegListReducer", () => {
 
     let action;
+
     const kegData = {
         brewery: "Modern Times",
         name: "Black House Coffee Stout",
@@ -21,7 +23,7 @@ describe("KegListReducer", () => {
     test("Should add new keg to kegArray", () => {
         const {brewery, name, location, description, abv, price, volume, id} = kegData;
         action = {
-            type: "ADD_KEG",
+            type: c.ADD_KEG,
             brewery: "Modern Times",
             name: "Black House Coffee Stout",
             location: "San Diego, CA",
