@@ -1,4 +1,4 @@
-import KegListReducer from "../../reducers/keg-list-reducer";
+import kegListReducer from "../../reducers/keg-list-reducer";
 
 describe("KegListReducer", () => {
 
@@ -15,7 +15,7 @@ describe("KegListReducer", () => {
     }
     
     test("Should return default state when no action is passed to reducer", () => {
-        expect(KegListReducer({}, { type: null })).toEqual({});
+        expect(kegListReducer({}, { type: null })).toEqual({});
     });
 
     test("Should add new keg to kegArray", () => {
@@ -32,7 +32,7 @@ describe("KegListReducer", () => {
             id: 1
         };
 
-        expect(ticketListReducer({}, action)).toEqual({
+        expect(kegListReducer({}, action)).toEqual({
             [id] : {
                 brewery: brewery, 
                 name: name,
