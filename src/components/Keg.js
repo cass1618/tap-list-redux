@@ -45,6 +45,7 @@ Keg.propTypes = {
     abv: PropTypes.string,
     price: PropTypes.string,
     volume: PropTypes.number,
+    order: PropTypes.number,
     whenKegClicked: PropTypes.func,
     whenSellClicked: PropTypes.func
 }

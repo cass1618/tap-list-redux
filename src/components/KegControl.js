@@ -16,6 +16,8 @@ class KegControl extends React.Component {
         };
     }
 
+    
+
     handleClick = () => {
         if (this.state.selectedKeg != null) {
             this.setState({
@@ -31,11 +33,17 @@ class KegControl extends React.Component {
     }
 
     handleSellingPint = (id) => {
+
         const selectedKeg = this.state.kegArray.filter(keg => keg.id === id)[0];
         if(selectedKeg.volume >= .125) {
             const newVolume = selectedKeg.volume - .125;
             const tempKeg = Object.assign({}, selectedKeg, {volume: newVolume});
-            const tempKegArray = this.state.kegArray.filter(keg => keg.id !== selectedKeg.id).concat(tempKeg);
+            
+            const tempKegArray = this.state.kegArray.filter(keg => keg.id !== selectedKeg.id)
+            .concat(tempKeg);
+            
+            console.log(tempKegArray);
+
             this.setState({
                 kegArray: tempKegArray,
             });
@@ -79,6 +87,10 @@ class KegControl extends React.Component {
     render() {
         let currentlyVisibleState = null;
         let buttonText = null;
+
+        //Make the list stateful
+        // const [list, setName] = React.useState(keyArray);
+
         if (this.state.editing) {
             currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} 
             onEditingKeg = {this.handleEditingKeg}/>

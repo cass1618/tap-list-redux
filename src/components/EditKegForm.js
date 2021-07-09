@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import GenericForm from "./GenericForm";
 
 function EditKegForm(props) {
+
   const { keg } = props;
 
   function handleEditKegFormSubmission(event) {

@@ -18,6 +18,7 @@ function KegList(props) {
                     price = {keg.price}
                     volume = {keg.volume}
                     pints = {keg.volume *8}
+                    order = {keg.order}
                     id = {keg.id}
                     key = {keg.id}
                 />
@@ -29,7 +30,7 @@ function KegList(props) {
 KegList.propTypes = {
     kegList: PropTypes.array,
     onSelectingKeg: PropTypes.func,
-    onSellingPint: PropTypes.func
+    onClickingSell: PropTypes.func
 };
 
 export default KegList;
