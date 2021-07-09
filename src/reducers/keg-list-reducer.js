@@ -19,7 +19,12 @@ export default (state = {}, action) => {
                 }
             });
 
-            default:
-                return state;
+        case c.DELETE_KEG:
+            let newState = {...state};
+            delete newState[id];
+            return newState;
+
+        default:
+            return state;
     }
 };
