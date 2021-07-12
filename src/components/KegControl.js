@@ -3,6 +3,7 @@ import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
 import BeerDetails from "./BeerDetails";
 import EditKegForm from "./EditKegForm";
+import {connect} from "react-redux";
 
 class KegControl extends React.Component {
 
@@ -10,13 +11,10 @@ class KegControl extends React.Component {
         super(props);
         this.state = {
             formVisibleOnPage: false,
-            kegArray: [],
             selectedKeg: null,
             editing: false
         };
     }
-
-    
 
     handleClick = () => {
         if (this.state.selectedKeg != null) {
@@ -85,11 +83,9 @@ class KegControl extends React.Component {
     }
 
     render() {
+        
         let currentlyVisibleState = null;
         let buttonText = null;
-
-        //Make the list stateful
-        // const [list, setName] = React.useState(keyArray);
 
         if (this.state.editing) {
             currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} 
@@ -117,5 +113,7 @@ class KegControl extends React.Component {
         );
     }
 }
+
+KegControl = connect()(KegControl);
 
 export default KegControl;
