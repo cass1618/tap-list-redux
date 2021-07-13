@@ -2,24 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import {createStore} from "redux";
-import reducer from "./reducers/keg-list-reducer";
+import rootReducer from "./reducers/index";
 import {Provider} from "react-redux";
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";
 
-const store = createStore(reducer);
+const store = createStore(rootReducer);
 
 store.subscribe(() => 
   console.log(store.getState())
 );
 
 ReactDOM.render(
-
-    <Provider store = {store}>
-      <App/>
-    </Provider>,
-  
-  document.getElementById('root')
+        <React.StrictMode>
+            <Provider store = {store}>
+                <App/>
+            </Provider>
+        </React.StrictMode>,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
