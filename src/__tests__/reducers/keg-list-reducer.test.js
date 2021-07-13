@@ -76,11 +76,11 @@ describe("KegListReducer", () => {
 
     test("Should delete keg from kegArray", () => {
         action = {
-            type: c.DELETE_TICKET,
+            type: c.DELETE_KEG,
             id: 1
         };
 
-        expect(ticketListReducer(currentState, action)).toEqual({
+        expect(kegListReducer(currentState, action)).toEqual({
             2: {
                 brewery: "Deschutes",
                 name: "Fresh Haze IPA",

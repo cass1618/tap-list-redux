@@ -54,9 +54,25 @@ class KegControl extends React.Component {
     }
 
     handleAddingKegToList = (newKeg) => {
-        const tempKegArray = this.state.kegArray.concat(newKeg);
+
+        const {dispatch} = this.props;
+        const {id, brewery, name, location, description, abv, price, volume} = newKeg;
+
+        const action = {
+            type: c.ADD_KEG,
+            id: id,
+            brewery: brewery,
+            name: name,
+            location: location,
+            description: description,
+            abv: abv,
+            price: price,
+            volume: volume
+        }
+
+        dispatch(action);
+
         this.setState({
-            kegArray : tempKegArray,
             formVisibleOnPage: false
         });
     };
